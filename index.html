@@ -173,10 +173,10 @@
 						<tr>
 							<td width=25 height=100 rowspan=4 align=center valign=middle>收<br>款<br>人</td>
 							<td width=75 height=25 align=center valign=middle>户　名</td>
-							<td width=225 height=25 align=left valign=middle>张三nbsp</td>
+							<td width=225 height=25 align=left valign=middle>张三</td>
 							<td width=25 height=100 rowspan=4 align=center valign=middle>付<br>款<br>人</td>
 							<td width=75 height=25 align=center valign=middle>户　名</td>
-							<td width=225 height=25 align=left valign=middle>费佐睿&nbsp</td>
+							<td width=225 height=25 align=left valign=middle>李四&nbsp</td>
 						</tr>
 						<tr>
 							<td width=75 height=25 align=center valign=middle>卡(账)号</td>
@@ -185,7 +185,7 @@
 							</td>
 							<td width=75 height=25 align=center valign=middle>卡(账)号</td>
 							<td width=225 height=25 align=left valign=middle class="cardNumberDivide">
-								6222021105010340079&nbsp
+								6222021105048361011&nbsp
 							</td>
 						</tr>
 						<tr>
@@ -249,6 +249,8 @@
 					$('table:eq(2) tr:eq(3) td:eq(1)').html(info[4]);
 					$('table:eq(2) tr:eq(5) td:eq(1)').html(info[5]);
 					$('table:eq(2) tr:eq(6) td:eq(1)').html(info[6]+'&nbsp');
+					$('table:eq(2) tr:eq(1) td:eq(5)').html(info[9]);
+					$('table:eq(2) tr:eq(2) td:eq(3)').html(info[10]);
 					// var time=data1['年1']+'年'+data1['月1']+'月'+data1['日1']+'日'+data1['时1']+'时'+data1['分1']+'分';
 					// var timestamp=data1['年2']+'-'+data1['月2']+'-'+data1['日2']+'-'+data1['时2']+'.'+data1['分2']+'.'+data1['秒2']+'.'+data1['六位小数'];
 					// var time_watermark=data1['年2']+'.'+data1['月2']+'.'+data1['日2']+' '+data1['时2']+':'+data1['分2']+':'+data1['秒2']
@@ -279,7 +281,7 @@
 					$('table:eq(2) tr:eq(7) td:eq(3)').html(sjc+'&nbsp');
 					
 					
-					var Name = '费佐睿';
+					var Name = info[9];
 					var payName = decodeURIComponent(Name);
 					var TranSubmitTimeShow = sjc_wtmk;
 					TranSubmitTimeShow = TranSubmitTimeShow.substring(0, 10).replace(/-/g, ".") + ' ' + TranSubmitTimeShow

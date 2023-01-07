@@ -105,142 +105,38 @@
 			watermark_container.appendChild(watermark_box);
 		}
 	</script> -->
-	<div class="layui-container" style="margin: 100px;">
-		<form class="layui-form" action="">
-			<div class="layui-form-item">
-				<label class="layui-form-label">电子回单号码</label>
-				<div class="layui-input-block">
-					<input type="text" name="电子回单号码" required lay-verify="required" placeholder="请输入电子回单号码"
-						autocomplete="off" class="layui-input">
-				</div>
-			</div>
-			<div class="layui-form-item">
-				<label class="layui-form-label">指令序号</label>
-				<div class="layui-input-block">
-					<input type="text" name="指令序号" required lay-verify="required" placeholder="请输入指令序号"
-						autocomplete="off" class="layui-input">
-				</div>
-			</div>
-			<div class="layui-form-item">
-				<label class="layui-form-label">收款人户名</label>
-				<div class="layui-input-block">
-					<input type="text" name="收款人户名" required lay-verify="required" placeholder="请输入收款人名"
-						autocomplete="off" class="layui-input" value="">
-				</div>
-			</div>
-			<div class="layui-form-item">
-				<label class="layui-form-label">收款人卡号</label>
-				<div class="layui-input-block">
-					<input type="text" name="收款人卡号" required lay-verify="required" placeholder="请输入收款人卡号"
-						autocomplete="off" class="layui-input" value="">
-				</div>
-			</div>
-			<div class="layui-form-item">
-				<label class="layui-form-label">银行</label>
-				<div class="layui-input-block">
-					<input type="text" name="银行" required lay-verify="required" placeholder="比如:中国工商银行"
-						autocomplete="off" class="layui-input" value=''>
-				</div>
-			</div>
-			<div class="layui-form-item">
-				<label class="layui-form-label">金额</label>
-				<div class="layui-input-block">
-					<input type="text" name="金额" required lay-verify="required" placeholder="比如:1.00元,记得加元,两位小数"
-						autocomplete="off" class="layui-input" value='.00元'>
-				</div>
-			</div>
-			<div class="layui-form-item">
-				<label class="layui-form-label">合计</label>
-				<div class="layui-input-block">
-					<input type="text" name="合计" required lay-verify="required" placeholder="比如:壹佰元整,记得加整"
-						autocomplete="off" class="layui-input" value='元整'>
-						零壹贰叁肆伍陆柒捌玖拾佰仟萬
-				</div>
-			</div>
-			<div class="layui-form-item">
-				<label class="layui-form-label">交易时间</label>
-				<div class="layui-input-block">
-					<input type="text" name="交易时间" required lay-verify="required" placeholder="用-分割"
-						autocomplete="off" class="layui-input" value=''>
-				</div>
-			</div>
-			<div class="layui-form-item">
-				<label class="layui-form-label">时间戳</label>
-				<div class="layui-input-block">
-					<input type="text" name="时间戳" required lay-verify="required" placeholder="用-分割"
-						autocomplete="off" class="layui-input" value=''>
-				</div>
-			</div>
-			<div class="layui-form-item">
-
-				<div class="layui-inline">
-					<label class="layui-form-label">交易时间：</label>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="年1" placeholder="2023" autocomplete="off" class="layui-input">
+	<div class="layui-container" style="margin: 100px;width: 90%;">
+		<div class="layui-row">
+		    <div class="layui-col-md12">
+		      <form class="layui-form" action="">
+		      	
+				<div class="layui-form-item">
+					<label class="layui-form-label">全部信息</label>
+					<div class="layui-input-block">
+						<input type="text" name="全部信息" required lay-verify="required" placeholder="空格作为分割"
+							autocomplete="off" class="layui-input" value=''>
+							<br>
+							从excel直接复制一行即可，格式：<br>
+							<br>
+							号码 指令执行号 司机姓名 卡号 银行 实付 大写 交易时间 时间戳
 					</div>
-					<div class="layui-form-mid">年</div>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="月1" placeholder="01" autocomplete="off" class="layui-input">
-					</div>
-					<div class="layui-form-mid">月</div>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="日1" placeholder="06" autocomplete="off" class="layui-input">
-					</div>
-					<div class="layui-form-mid">日</div>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="时1" placeholder="15" autocomplete="off" class="layui-input">
-					</div>
-					<div class="layui-form-mid">时</div>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="分1" placeholder="17" autocomplete="off" class="layui-input">
-					</div>
-					<div class="layui-form-mid">分</div>
-					
 				</div>
-			</div>
-			<div class="layui-form-item">
-			
-				<div class="layui-inline">
-					<label class="layui-form-label">时间戳：</label>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="年2" placeholder="2023" autocomplete="off" class="layui-input">
-					</div>
-					<div class="layui-form-mid">年</div>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="月2" placeholder="01" autocomplete="off" class="layui-input">
-					</div>
-					<div class="layui-form-mid">月</div>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="日2" placeholder="06" autocomplete="off" class="layui-input">
-					</div>
-					<div class="layui-form-mid">日</div>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="时2" placeholder="15" autocomplete="off" class="layui-input">
-					</div>
-					<div class="layui-form-mid">时</div>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="分2" placeholder="23" autocomplete="off" class="layui-input">
-					</div>
-					<div class="layui-form-mid">分</div>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="秒2" placeholder="44" autocomplete="off" class="layui-input">
-					</div>
-					<div class="layui-form-mid">秒</div>
-					<div class="layui-input-inline" style="width: 100px;">
-						<input type="text" name="六位小数" placeholder="000755" autocomplete="off" class="layui-input">
-					</div>
-					<div class="layui-form-mid">六位小数</div>
-				</div>
-			</div>
-			<div class="layui-form-item">
-				<div class="layui-input-block">
-					<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
-				</div>
-			</div>
-		</form>
+		      	
+		      	<div class="layui-form-item">
+		      		<div class="layui-input-block">
+		      			<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+		      			<button type="reset" class="layui-btn layui-btn-primary" id="reset">重置</button>
+		      			
+		      		</div>
+		      	</div>
+		      </form>
+		    </div>
+		    
+		  </div>
+		
+	
 	</div>
-
+	
 	<div class="icbc_water_container" id="table_GHHD_1"
 		style="margin: 0px auto; left: 0px; width: 800px; height: 650px; overflow: hidden;">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -259,7 +155,7 @@
 			</tr>
 			<tr><br>
 			<tr id="dzhdhm">
-			<td align="left" colspan="2">电子回单号码：ZZHK-0002-7238-2456-0192</td>
+			<td align="left" colspan="2">电子回单号码：ZZHK-0002-7238-5489-0192</td>
 			</tr>
 		</table>
 		<table width="650" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#000000"
@@ -272,12 +168,12 @@
 							<td width=100 height=25 colspan=2 align=center valign=middle>回单类型</td>
 							<td width=225 height=25 colspan=1 align=left valign=middle>境内汇款&nbsp;</td>
 							<td width=100 height=25 colspan=2 align=center valign=middle>指令序号</td>
-							<td width=225 height=25 colspan=1 align=center valign=middle>030311053006113451105606742&nbsp;</td>
+							<td width=225 height=25 colspan=1 align=center valign=middle>030311053006115100005606742&nbsp;</td>
 						</tr>
 						<tr>
 							<td width=25 height=100 rowspan=4 align=center valign=middle>收<br>款<br>人</td>
 							<td width=75 height=25 align=center valign=middle>户　名</td>
-							<td width=225 height=25 align=left valign=middle>张三&nbsp</td>
+							<td width=225 height=25 align=left valign=middle>王虎&nbsp</td>
 							<td width=25 height=100 rowspan=4 align=center valign=middle>付<br>款<br>人</td>
 							<td width=75 height=25 align=center valign=middle>户　名</td>
 							<td width=225 height=25 align=left valign=middle>费佐睿&nbsp</td>
@@ -285,7 +181,7 @@
 						<tr>
 							<td width=75 height=25 align=center valign=middle>卡(账)号</td>
 							<td width=225 height=25 align=left valign=middle class="cardNumberDivide">
-								6236681263489330874
+								6236681260002430874
 							</td>
 							<td width=75 height=25 align=center valign=middle>卡(账)号</td>
 							<td width=225 height=25 align=left valign=middle class="cardNumberDivide">
@@ -341,23 +237,25 @@
 				form.on('submit(formDemo)', function(data) {
 					// console.log(JSON.stringify(data.field));
 					data1 = data.field;
+					var info=data1['全部信息'].split('	');
+					console.log(info)
 					// console.log(data1['电子回单号码']);
-					$('#dzhdhm').eq(0).html('电子回单号码：'+data1['电子回单号码']);
+					$('#dzhdhm').eq(0).html('电子回单号码：'+info[0]);
 					var table1=$('#tr1').eq(0).html();
 					// console.log(table1);
-					$('table:eq(2) tr:eq(0) td:eq(3)').html(data1['指令序号']+'&nbsp;');
-					$('table:eq(2) tr:eq(1) td:eq(2)').html(data1['收款人户名']+'&nbsp');
-					$('table:eq(2) tr:eq(2) td:eq(1)').html(data1['收款人卡号']+'&nbsp');
-					$('table:eq(2) tr:eq(3) td:eq(1)').html(data1['银行']);
-					$('table:eq(2) tr:eq(5) td:eq(1)').html(data1['金额']);
-					$('table:eq(2) tr:eq(6) td:eq(1)').html(data1['合计']+'&nbsp');
-					var time=data1['年1']+'年'+data1['月1']+'月'+data1['日1']+'日'+data1['时1']+'时'+data1['分1']+'分';
-					var timestamp=data1['年2']+'-'+data1['月2']+'-'+data1['日2']+'-'+data1['时2']+'.'+data1['分2']+'.'+data1['秒2']+'.'+data1['六位小数'];
-					var time_watermark=data1['年2']+'.'+data1['月2']+'.'+data1['日2']+' '+data1['时2']+':'+data1['分2']+':'+data1['秒2']
+					$('table:eq(2) tr:eq(0) td:eq(3)').html(info[1]+'&nbsp;');
+					$('table:eq(2) tr:eq(1) td:eq(2)').html(info[2]+'&nbsp');
+					$('table:eq(2) tr:eq(2) td:eq(1)').html(info[3]+'&nbsp');
+					$('table:eq(2) tr:eq(3) td:eq(1)').html(info[4]);
+					$('table:eq(2) tr:eq(5) td:eq(1)').html(info[5]);
+					$('table:eq(2) tr:eq(6) td:eq(1)').html(info[6]+'&nbsp');
+					// var time=data1['年1']+'年'+data1['月1']+'月'+data1['日1']+'日'+data1['时1']+'时'+data1['分1']+'分';
+					// var timestamp=data1['年2']+'-'+data1['月2']+'-'+data1['日2']+'-'+data1['时2']+'.'+data1['分2']+'.'+data1['秒2']+'.'+data1['六位小数'];
+					// var time_watermark=data1['年2']+'.'+data1['月2']+'.'+data1['日2']+' '+data1['时2']+':'+data1['分2']+':'+data1['秒2']
 					// console.log(timestamp);
 					// $('table:eq(2) tr:eq(7) td:eq(1)').html(time+'&nbsp');
 					// $('table:eq(2) tr:eq(7) td:eq(3)').html(timestamp+'&nbsp');
-					var time1 =data1['交易时间'].split('-');
+					var time1 =info[7].split('-');
 					var danwei1=['年','月','日','时','分'];
 					var jysj=''
 					for(var i=0;i<danwei1.length;i++){
@@ -365,7 +263,7 @@
 					}
 					// console.log(jysj)
 					
-					var time2 =data1['时间戳'].split('-');
+					var time2 =info[8].split('-');
 					var danwei2=['-','-','-','.','.','.'];
 					var sjc=time2[0]
 					var sjc_wtmk=time2[0]
@@ -379,6 +277,7 @@
 					console.log(sjc_wtmk)
 					$('table:eq(2) tr:eq(7) td:eq(1)').html(jysj+'&nbsp');
 					$('table:eq(2) tr:eq(7) td:eq(3)').html(sjc+'&nbsp');
+					
 					
 					var Name = '费佐睿';
 					var payName = decodeURIComponent(Name);
@@ -397,7 +296,7 @@
 							.height : '700px') + "; ");
 						for (i = 0; i < 50; i++) {
 							var water_item = document.createElement('div');
-							water_item.className = 'icbc_water_item hide';
+							water_item.className = 'icbc_water_item';
 							var bodydiv = document.createElement('div');
 							bodydiv.style.width = "30px";
 							bodydiv.style.height = "30px";
@@ -415,5 +314,12 @@
 					
 					return false;
 				});
+				
+			$('#reset').click(function(){
+				var water =$('.icbc_water_item')
+				$.each(water,function(){
+					$(this).remove()
+				})
+			})	
 			});
 		</script>

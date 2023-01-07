@@ -157,20 +157,20 @@
 						零壹贰叁肆伍陆柒捌玖拾佰仟萬
 				</div>
 			</div>
-			<!-- <div class="layui-form-item">
+			<div class="layui-form-item">
 				<label class="layui-form-label">交易时间</label>
 				<div class="layui-input-block">
 					<input type="text" name="交易时间" required lay-verify="required" placeholder="用-分割"
-						autocomplete="off" class="layui-input" value='元整'>
+						autocomplete="off" class="layui-input" value=''>
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">时间戳</label>
 				<div class="layui-input-block">
 					<input type="text" name="时间戳" required lay-verify="required" placeholder="用-分割"
-						autocomplete="off" class="layui-input" value='元整'>
+						autocomplete="off" class="layui-input" value=''>
 				</div>
-			</div> -->
+			</div>
 			<div class="layui-form-item">
 
 				<div class="layui-inline">
@@ -354,14 +354,35 @@
 					var time=data1['年1']+'年'+data1['月1']+'月'+data1['日1']+'日'+data1['时1']+'时'+data1['分1']+'分';
 					var timestamp=data1['年2']+'-'+data1['月2']+'-'+data1['日2']+'-'+data1['时2']+'.'+data1['分2']+'.'+data1['秒2']+'.'+data1['六位小数'];
 					var time_watermark=data1['年2']+'.'+data1['月2']+'.'+data1['日2']+' '+data1['时2']+':'+data1['分2']+':'+data1['秒2']
-					console.log(timestamp);
-					$('table:eq(2) tr:eq(7) td:eq(1)').html(time+'&nbsp');
-					$('table:eq(2) tr:eq(7) td:eq(3)').html(timestamp+'&nbsp');
+					// console.log(timestamp);
+					// $('table:eq(2) tr:eq(7) td:eq(1)').html(time+'&nbsp');
+					// $('table:eq(2) tr:eq(7) td:eq(3)').html(timestamp+'&nbsp');
+					var time1 =data1['交易时间'].split('-');
+					var danwei1=['年','月','日','时','分'];
+					var jysj=''
+					for(var i=0;i<danwei1.length;i++){
+						jysj+=time1[i]+danwei1[i]
+					}
+					// console.log(jysj)
 					
+					var time2 =data1['时间戳'].split('-');
+					var danwei2=['-','-','-','.','.','.'];
+					var sjc=time2[0]
+					var sjc_wtmk=time2[0]
+					for(var i=0;i<danwei2.length;i++){
+						sjc+=danwei2[i]+time2[i+1]
+					}
+					for(var i=1;i<danwei2.length;i++){
+						sjc_wtmk+=danwei2[i]+time2[i]
+					}
+					console.log(sjc)
+					console.log(sjc_wtmk)
+					$('table:eq(2) tr:eq(7) td:eq(1)').html(jysj+'&nbsp');
+					$('table:eq(2) tr:eq(7) td:eq(3)').html(sjc+'&nbsp');
 					
 					var Name = '费佐睿';
 					var payName = decodeURIComponent(Name);
-					var TranSubmitTimeShow = time_watermark;
+					var TranSubmitTimeShow = sjc_wtmk;
 					TranSubmitTimeShow = TranSubmitTimeShow.substring(0, 10).replace(/-/g, ".") + ' ' + TranSubmitTimeShow
 						.substring(11, 19).replace(/\./g, ":");
 					var txt = payName + " " + "中国工商银行" + " " + TranSubmitTimeShow + " ";

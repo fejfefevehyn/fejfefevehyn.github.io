@@ -1,0 +1,383 @@
+<html>
+	<meta http-equiv="X-UA-Compatible" content="IE=10,requiresActiveX=true" />
+	<style type="text/css">
+		.icbc_water_container {
+			position: relative;
+		}
+
+		.icbc_water_box {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0.2;
+			filter: alpha(opacity=20);
+			/*透明度，兼容低版本IE*/
+			z-index: 1;
+			-ms-user-select: none;
+			user-select: none
+		}
+
+		.icbc_water_item {
+			display: inline-block;
+			/* 自动换行 */
+			*display: inline;
+			/* 自动换行 处理兼容性*/
+			zoom: 1;
+			/* 自动换行 处理兼容性*/
+			height: 40px;
+			line-height: 0px;
+			font-size: 18px;
+			color: red;
+			margin-top: 18px;
+			margin-right: -65px;
+			margin-bottom: 18px;
+			overflow: hidden;
+			font-family: "宋体";
+			transform-origin: -36 100;
+			/* 起始位置 原 -200 100*/
+			-o-transform-origin: -36 100;
+			-webkit-transform-origin: -36 100;
+			-moz-transform-origin: -36 100;
+			-ms-transform-origin: -36 100;
+			transform: rotate(-36deg);
+			/* 旋转角度 */
+			-o-transform: rotate(-36deg);
+			/* 旋转角度 Opera*/
+			-webkit-transform: rotate(-36deg);
+			/* 旋转角度Safari Chrome */
+			-moz-transform: rotate(-36deg);
+			/* 旋转角度 Firefox*/
+			-ms-transform: rotate(-36deg);
+			/* 旋转角度 IE */
+			/* 旋转角度 兼容低版本iE */
+			filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.6099, M12=0.1109658, M21=-0.1109658, M22=0.6099, 0, 0);
+		}
+
+		/*兼容IE9的filter属性*/
+		:root .hide {
+			filter: none;
+		}
+	</style>
+
+	<!-- 引入 layui.css -->
+	<link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
+
+	<!-- 引入 layui.js -->
+	<script src="//unpkg.com/layui@2.6.8/dist/layui.js">
+
+	</script>
+
+<!-- 
+	<script>
+		window.onload = function() {
+			var Name = '王虎';
+			var payName = decodeURIComponent(Name);
+			var TranSubmitTimeShow = '2023-01-06-15.23.44.000755';
+			TranSubmitTimeShow = TranSubmitTimeShow.substring(0, 10).replace(/-/g, ".") + ' ' + TranSubmitTimeShow
+				.substring(11, 19).replace(/\./g, ":");
+			var txt = payName + " " + "中国工商银行" + " " + TranSubmitTimeShow + " ";
+			water_mask(document.getElementById("table_GHHD_1"), txt);
+		};
+
+		function water_mask(container, text) {
+			var watermark_container = container;
+			var watermark_box = document.createElement('div');
+			watermark_box.className = 'icbc_water_box';
+			watermark_box.style.cssText += ("width:" + (watermark_container.style.width >= 1000 ? watermark_container.style
+				.width : '1000px') + ";");
+			watermark_box.style.cssText += ("height:" + (watermark_container.style.height >= 700 ? watermark_container.style
+				.height : '700px') + "; ");
+			for (i = 0; i < 50; i++) {
+				var water_item = document.createElement('div');
+				water_item.className = 'icbc_water_item hide';
+				var bodydiv = document.createElement('div');
+				bodydiv.style.width = "30px";
+				bodydiv.style.height = "30px";
+				var cc = new Image();
+				cc.src = "https://mybank.icbc.com.cn/icbc/newperbank/images/ebill/icon_icbcLogo.png";
+				cc.style.width = "30px";
+				cc.style.height = "30px";
+				cc.style.top = "5px";
+				water_item.innerText = text;
+				water_item.appendChild(cc);
+				watermark_box.appendChild(water_item);
+			}
+			watermark_container.appendChild(watermark_box);
+		}
+	</script> -->
+	<div class="layui-container" style="margin: 100px;">
+		<form class="layui-form" action="">
+			<div class="layui-form-item">
+				<label class="layui-form-label">电子回单号码</label>
+				<div class="layui-input-block">
+					<input type="text" name="电子回单号码" required lay-verify="required" placeholder="请输入电子回单号码"
+						autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">指令序号</label>
+				<div class="layui-input-block">
+					<input type="text" name="指令序号" required lay-verify="required" placeholder="请输入指令序号"
+						autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">付款人户名</label>
+				<div class="layui-input-block">
+					<input type="text" name="付款人户名" required lay-verify="required" placeholder="请输入付款人名"
+						autocomplete="off" class="layui-input" value="费佐睿">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">付款人卡号</label>
+				<div class="layui-input-block">
+					<input type="text" name="付款人卡号" required lay-verify="required" placeholder="请输入付款人卡号"
+						autocomplete="off" class="layui-input" value="6222021105010340079">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">银行</label>
+				<div class="layui-input-block">
+					<input type="text" name="银行" required lay-verify="required" placeholder="比如:中国工商银行"
+						autocomplete="off" class="layui-input" value='中国工商银行'>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">金额</label>
+				<div class="layui-input-block">
+					<input type="text" name="金额" required lay-verify="required" placeholder="比如:1.00元,记得加元,两位小数"
+						autocomplete="off" class="layui-input" value='.00元'>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">合计</label>
+				<div class="layui-input-block">
+					<input type="text" name="合计" required lay-verify="required" placeholder="比如:壹佰元整,记得加整"
+						autocomplete="off" class="layui-input" value='元整'>
+				</div>
+			</div>
+			<div class="layui-form-item">
+
+				<div class="layui-inline">
+					<label class="layui-form-label">交易时间：</label>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="年1" placeholder="2023" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid">年</div>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="月1" placeholder="01" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid">月</div>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="日1" placeholder="06" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid">日</div>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="时1" placeholder="15" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid">时</div>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="分1" placeholder="17" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid">分</div>
+					
+				</div>
+			</div>
+			<div class="layui-form-item">
+			
+				<div class="layui-inline">
+					<label class="layui-form-label">时间戳：</label>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="年2" placeholder="2023" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid">年</div>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="月2" placeholder="01" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid">月</div>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="日2" placeholder="06" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid">日</div>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="时2" placeholder="15" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid">时</div>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="分2" placeholder="23" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid">分</div>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="秒2" placeholder="44" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid">秒</div>
+					<div class="layui-input-inline" style="width: 100px;">
+						<input type="text" name="六位小数" placeholder="000755" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid">六位小数</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="icbc_water_container" id="table_GHHD_1"
+		style="margin: 0px auto; left: 0px; width: 800px; height: 650px; overflow: hidden;">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<table>
+			<tr>
+				<td align="center" colspan="2">
+					<font face="黑体" size="5">中国工商银行</font>&nbsp;&nbsp;&nbsp;电子银行回单
+				</td>
+			</tr>
+			<tr align="center">
+				<td align="center" colspan="2"><IMG SRC="https://mybank.icbc.com.cn/icbc/newperbank/images/blackdot.gif"
+						WIDTH="500" HEIGHT="2" BORDER=0 ALT=""></td>
+			</tr>
+			<tr>
+				<td heigth="1" colspan="2">&nbsp;</td>
+			</tr>
+			<tr><br>
+			<tr id="dzhdhm">
+			<td align="left" colspan="2">电子回单号码：ZZHK-0002-7238-5489-0192</td>
+			</tr>
+		</table>
+		<table width="650" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#000000"
+			bordercolordark="#FFFFFF" >
+			<tr height="80" align="center" id='tr1'>
+				<td>
+					<table width="650" align="center" border="1" cellspacing="0" cellpadding="0"
+						bordercolorlight="#000000" bordercolordark="#FFFFFF">
+						<tr id="zlxh">
+							<td width=100 height=25 colspan=2 align=center valign=middle>回单类型</td>
+							<td width=225 height=25 colspan=1 align=left valign=middle>境内汇款&nbsp;</td>
+							<td width=100 height=25 colspan=2 align=center valign=middle>指令序号</td>
+							<td width=225 height=25 colspan=1 align=center valign=middle>030311053006115100005606742&nbsp;</td>
+						</tr>
+						<tr>
+							<td width=25 height=100 rowspan=4 align=center valign=middle>收<br>款<br>人</td>
+							<td width=75 height=25 align=center valign=middle>户　名</td>
+							<td width=225 height=25 align=left valign=middle>王虎&nbsp</td>
+							<td width=25 height=100 rowspan=4 align=center valign=middle>付<br>款<br>人</td>
+							<td width=75 height=25 align=center valign=middle>户　名</td>
+							<td width=225 height=25 align=left valign=middle>王虎&nbsp</td>
+						</tr>
+						<tr>
+							<td width=75 height=25 align=center valign=middle>卡(账)号</td>
+							<td width=225 height=25 align=left valign=middle class="cardNumberDivide">
+								6236681260002430874
+							</td>
+							<td width=75 height=25 align=center valign=middle>卡(账)号</td>
+							<td width=225 height=25 align=left valign=middle class="cardNumberDivide">
+								9558801105104080219&nbsp
+							</td>
+						</tr>
+						<tr>
+							<td width=75 height=25 align=center valign=middle>银　行</td>
+							<td width=225 height=25 align=left valign=middle>中国建设银行</td>
+							<td width=75 height=25 align=center valign=middle>银　行</td>
+							<td width=225 height=25 align=left valign=middle>中国工商银行</td>
+						</tr>
+						<tr>
+							<td width=75 height=25 align=center valign=middle>币　种</td>
+							<td width=225 height=25 align=left valign=middle>人民币</td>
+							<td width=75 height=25 align=center valign=middle>钞汇标志</td>
+							<td width=225 height=25 align=left valign=middle>钞</td>
+						</tr>
+						<tr>
+							<td height=25 colspan=2 align=center valign=middle>金　额</td>
+							<td height=25 align=left valign=middle>1.00元&nbsp</td>
+							<td height=25 colspan=2 align=center valign=middle>手续费</td>
+							<td height=25 align=left valign=middle>0.00元&nbsp</td>
+						</tr>
+						<tr>
+							<td height=25 colspan=2 align=center valign=middle>合　计</td>
+							<td height=25 colspan=4 align=left valign=middle>人民币(大写):壹元整&nbsp</td>
+						</tr>
+						<tr>
+							<td height=25 colspan=2 align=center valign=middle>交易时间</td>
+							<td height=25 align=left valign=middle>2023年01月06日15时17分&nbsp</td>
+							<td height=25 colspan=2 align=center valign=middle>时间戳</td>
+							<td height=25 align=left valign=middle>2025-01-06-15.23.44.000755&nbsp</td>
+						</tr>
+						<tr>
+							<td height=110 rowspan=2 colspan=2 align=center valign=middle><img
+									src="https://mybank.icbc.com.cn/icbc/newperbank/images/ebill/tuzhang.gif">
+							</td>
+							<td height=80 colspan=4 align=left valign=middle>附言：运费<br>&nbsp</td>
+						</tr>
+				</td>
+			</tr>
+		</table>
+
+		<script>
+			//Demo
+			layui.use(['form', 'jquery'], function() {
+				var form = layui.form;
+				var $ = layui.$;
+				form.val()
+
+				//监听提交
+				form.on('submit(formDemo)', function(data) {
+					// console.log(JSON.stringify(data.field));
+					data1 = data.field;
+					// console.log(data1['电子回单号码']);
+					$('#dzhdhm').eq(0).html('电子回单号码：'+data1['电子回单号码']);
+					var table1=$('#tr1').eq(0).html();
+					// console.log(table1);
+					$('table:eq(2) tr:eq(0) td:eq(3)').html(data1['指令序号']+'&nbsp;');
+					$('table:eq(2) tr:eq(1) td:eq(5)').html(data1['付款人户名']+'&nbsp');
+					$('table:eq(2) tr:eq(2) td:eq(3)').html(data1['付款人卡号']+'&nbsp');
+					$('table:eq(2) tr:eq(3) td:eq(3)').html(data1['银行']);
+					$('table:eq(2) tr:eq(5) td:eq(1)').html(data1['金额']);
+					$('table:eq(2) tr:eq(6) td:eq(1)').html(data1['合计']+'&nbsp');
+					var time=data1['年1']+'年'+data1['月1']+'月'+data1['日1']+'日'+data1['时1']+'时'+data1['分1']+'分';
+					var timestamp=data1['年2']+'-'+data1['月2']+'-'+data1['日2']+'-'+data1['时2']+'.'+data1['分2']+'.'+data1['秒2']+'.'+data1['六位小数'];
+					var time_watermark=data1['年2']+'.'+data1['月2']+'.'+data1['日2']+' '+data1['时2']+':'+data1['分2']+':'+data1['秒2']
+					console.log(timestamp);
+					$('table:eq(2) tr:eq(7) td:eq(1)').html(time+'&nbsp');
+					$('table:eq(2) tr:eq(7) td:eq(3)').html(timestamp+'&nbsp');
+					
+					
+					var Name = data1['付款人户名'];
+					var payName = decodeURIComponent(Name);
+					var TranSubmitTimeShow = time_watermark;
+					TranSubmitTimeShow = TranSubmitTimeShow.substring(0, 10).replace(/-/g, ".") + ' ' + TranSubmitTimeShow
+						.substring(11, 19).replace(/\./g, ":");
+					var txt = payName + " " + "中国工商银行" + " " + TranSubmitTimeShow + " ";
+					water_mask(document.getElementById("table_GHHD_1"), txt);
+					function water_mask(container, text) {
+						var watermark_container = container;
+						var watermark_box = document.createElement('div');
+						watermark_box.className = 'icbc_water_box';
+						watermark_box.style.cssText += ("width:" + (watermark_container.style.width >= 1000 ? watermark_container.style
+							.width : '1000px') + ";");
+						watermark_box.style.cssText += ("height:" + (watermark_container.style.height >= 700 ? watermark_container.style
+							.height : '700px') + "; ");
+						for (i = 0; i < 50; i++) {
+							var water_item = document.createElement('div');
+							water_item.className = 'icbc_water_item hide';
+							var bodydiv = document.createElement('div');
+							bodydiv.style.width = "30px";
+							bodydiv.style.height = "30px";
+							var cc = new Image();
+							cc.src = "https://mybank.icbc.com.cn/icbc/newperbank/images/ebill/icon_icbcLogo.png";
+							cc.style.width = "30px";
+							cc.style.height = "30px";
+							cc.style.top = "5px";
+							water_item.innerText = text;
+							water_item.appendChild(cc);
+							watermark_box.appendChild(water_item);
+						}
+						watermark_container.appendChild(watermark_box);
+					}
+					
+					return false;
+				});
+			});
+		</script>

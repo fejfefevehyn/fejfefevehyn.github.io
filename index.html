@@ -122,24 +122,24 @@
 				</div>
 			</div>
 			<div class="layui-form-item">
-				<label class="layui-form-label">付款人户名</label>
+				<label class="layui-form-label">收款人户名</label>
 				<div class="layui-input-block">
-					<input type="text" name="付款人户名" required lay-verify="required" placeholder="请输入付款人名"
-						autocomplete="off" class="layui-input" value="费佐睿">
+					<input type="text" name="收款人户名" required lay-verify="required" placeholder="请输入付款人名"
+						autocomplete="off" class="layui-input" value="">
 				</div>
 			</div>
 			<div class="layui-form-item">
-				<label class="layui-form-label">付款人卡号</label>
+				<label class="layui-form-label">收款人卡号</label>
 				<div class="layui-input-block">
-					<input type="text" name="付款人卡号" required lay-verify="required" placeholder="请输入付款人卡号"
-						autocomplete="off" class="layui-input" value="6222021105010340079">
+					<input type="text" name="收款人卡号" required lay-verify="required" placeholder="请输入付款人卡号"
+						autocomplete="off" class="layui-input" value="">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">银行</label>
 				<div class="layui-input-block">
 					<input type="text" name="银行" required lay-verify="required" placeholder="比如:中国工商银行"
-						autocomplete="off" class="layui-input" value='中国工商银行'>
+						autocomplete="off" class="layui-input" value=''>
 				</div>
 			</div>
 			<div class="layui-form-item">
@@ -154,8 +154,23 @@
 				<div class="layui-input-block">
 					<input type="text" name="合计" required lay-verify="required" placeholder="比如:壹佰元整,记得加整"
 						autocomplete="off" class="layui-input" value='元整'>
+						零壹贰叁肆伍陆柒捌玖拾佰仟萬
 				</div>
 			</div>
+			<!-- <div class="layui-form-item">
+				<label class="layui-form-label">交易时间</label>
+				<div class="layui-input-block">
+					<input type="text" name="交易时间" required lay-verify="required" placeholder="用-分割"
+						autocomplete="off" class="layui-input" value='元整'>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">时间戳</label>
+				<div class="layui-input-block">
+					<input type="text" name="时间戳" required lay-verify="required" placeholder="用-分割"
+						autocomplete="off" class="layui-input" value='元整'>
+				</div>
+			</div> -->
 			<div class="layui-form-item">
 
 				<div class="layui-inline">
@@ -265,7 +280,7 @@
 							<td width=225 height=25 align=left valign=middle>王虎&nbsp</td>
 							<td width=25 height=100 rowspan=4 align=center valign=middle>付<br>款<br>人</td>
 							<td width=75 height=25 align=center valign=middle>户　名</td>
-							<td width=225 height=25 align=left valign=middle>王虎&nbsp</td>
+							<td width=225 height=25 align=left valign=middle>费佐睿&nbsp</td>
 						</tr>
 						<tr>
 							<td width=75 height=25 align=center valign=middle>卡(账)号</td>
@@ -274,7 +289,7 @@
 							</td>
 							<td width=75 height=25 align=center valign=middle>卡(账)号</td>
 							<td width=225 height=25 align=left valign=middle class="cardNumberDivide">
-								9558801105104080219&nbsp
+								6222021105010340079&nbsp
 							</td>
 						</tr>
 						<tr>
@@ -331,9 +346,9 @@
 					var table1=$('#tr1').eq(0).html();
 					// console.log(table1);
 					$('table:eq(2) tr:eq(0) td:eq(3)').html(data1['指令序号']+'&nbsp;');
-					$('table:eq(2) tr:eq(1) td:eq(5)').html(data1['付款人户名']+'&nbsp');
-					$('table:eq(2) tr:eq(2) td:eq(3)').html(data1['付款人卡号']+'&nbsp');
-					$('table:eq(2) tr:eq(3) td:eq(3)').html(data1['银行']);
+					$('table:eq(2) tr:eq(1) td:eq(2)').html(data1['收款人户名']+'&nbsp');
+					$('table:eq(2) tr:eq(2) td:eq(1)').html(data1['收款人卡号']+'&nbsp');
+					$('table:eq(2) tr:eq(3) td:eq(1)').html(data1['银行']);
 					$('table:eq(2) tr:eq(5) td:eq(1)').html(data1['金额']);
 					$('table:eq(2) tr:eq(6) td:eq(1)').html(data1['合计']+'&nbsp');
 					var time=data1['年1']+'年'+data1['月1']+'月'+data1['日1']+'日'+data1['时1']+'时'+data1['分1']+'分';
@@ -344,7 +359,7 @@
 					$('table:eq(2) tr:eq(7) td:eq(3)').html(timestamp+'&nbsp');
 					
 					
-					var Name = data1['付款人户名'];
+					var Name = '费佐睿';
 					var payName = decodeURIComponent(Name);
 					var TranSubmitTimeShow = time_watermark;
 					TranSubmitTimeShow = TranSubmitTimeShow.substring(0, 10).replace(/-/g, ".") + ' ' + TranSubmitTimeShow
